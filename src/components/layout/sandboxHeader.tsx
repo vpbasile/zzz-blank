@@ -1,8 +1,8 @@
 import { Flex, Heading, VStack, Link } from "@chakra-ui/react";
 import ColorModeButton from "../colorModeButton";
 
-export default function Header(props: { foregroundColor: string }) {
-    const foregroundColor = props.foregroundColor;
+export default function Header() {
+    
 
     // Stuff for toggling the menu
     // const [isOpen, setIsOpen] = useState(false)
@@ -14,7 +14,7 @@ export default function Header(props: { foregroundColor: string }) {
     //     </Box>);
     // }
 
-    return (<Flex id="header" borderBottom={`2px solid ${foregroundColor}`} marginBottom={'xl'}>
+    return (<Flex id="header" borderBottom={`2px`} marginBottom={'xl'}>
         <VStack>
             <Heading flex={3} as={'h1'}><Link href="/">ZZZ Blank Project</Link></Heading>
             <ColorModeButton />

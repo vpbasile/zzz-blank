@@ -1,9 +1,8 @@
 import { LinkIcon } from "@chakra-ui/icons";
 import { Box, Text, Button, ButtonGroup, Link } from "@chakra-ui/react";
 
-export default function Footer(props: { foregroundColor: string }) {
-    const fgColor = props.foregroundColor
-    return (<Box id="footer" textAlign={'right'} borderTop={`2px solid ${fgColor}`} marginTop={'xl'}>
+export default function Footer() {
+    return (<Box id="footer" textAlign={'right'} borderTop={`2px`} marginTop={'xl'}>
         <ButtonGroup flex={1}>
             <Button leftIcon={<LinkIcon />}><Link isExternal href="https://chakra-ui.com/">ChakraUI</Link></Button>
             <Button leftIcon={<LinkIcon />}><Link isExternal href="https://chakra-ui.com/docs/components/icon/usage#all-icons">Icon Reference</Link></Button>

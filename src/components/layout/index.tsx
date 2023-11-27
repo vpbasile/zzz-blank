@@ -1,17 +1,16 @@
-import { Box, useColorModeValue } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 import SandboxHeader from './sandboxHeader'
 import SandboxFooter from './sandboxFooter'
 import { Outlet } from 'react-router-dom'
 
 export default function Layout() {
 
-    const foreGroundColor = useColorModeValue('black', 'white')
     return (<>
-        <SandboxHeader foregroundColor={foreGroundColor} />
+        <SandboxHeader />
         <Box id='mainBody' p={9}>
             {/* This is where the children will be rendered */}
             <Outlet />
         </Box>
-        <SandboxFooter foregroundColor={foreGroundColor} />
+        <SandboxFooter />
     </>)
 }
