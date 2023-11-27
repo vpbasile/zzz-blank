@@ -1,5 +1,5 @@
 import { Flex, Heading, VStack, Link, Button, Menu, MenuItem, MenuButton, MenuList } from "@chakra-ui/react";
-import ColorModeButton from "./helpers/colorModeButton";
+import ColorModeButton from "../colorModeButton";
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 // import { useState } from "react";
 
@@ -12,7 +12,7 @@ export type routeType = {
     tags?: string;
 }
 
-export default function Header(props: { foregroundColor: string, routes: routeType[] }) {
+export default function Header(props: { foregroundColor: string, routes?: routeType[] }) {
     const routes = props.routes;
     const foregroundColor = props.foregroundColor;
 
@@ -36,7 +36,7 @@ export default function Header(props: { foregroundColor: string, routes: routeTy
                 <MenuButton as={Button} colorScheme='green' leftIcon={<ChevronLeftIcon />} rightIcon={<ChevronRightIcon />}>
                     Choose a module
                 </MenuButton>
-                <MenuList>
+                {routes && <MenuList>
                     {routes.map(eachRoute => {
                         const path = eachRoute.path;
                         return <MenuItem key={keyGen++}><Link href={path}>{eachRoute.displayName}</Link></MenuItem>;
@@ -48,7 +48,7 @@ export default function Header(props: { foregroundColor: string, routes: routeTy
         <MenuItem>Docs</MenuItem>
         <MenuItem>FAQ</MenuItem>
     </MenuGroup> */}
-                </MenuList>
+                </MenuList>}
             </Menu>}
         </VStack>
     </Flex >)
